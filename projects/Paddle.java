@@ -8,11 +8,20 @@ public class Paddle extends GameObject{
     public Paddle(int width, int height) {
         super(width, height);
     }
+    
+    /** 
+     * @param obj
+     */
     @Override
     public void collision(GameObject obj) {
         if ((obj instanceof Ball)); 
         else velocityY = 0;
     }
+    
+    /** 
+     * @param up
+     * @param down
+     */
     public void setKeys(int up, int down) {
         UP_KEY = up;
         DOWN_KEY = down;

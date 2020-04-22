@@ -43,6 +43,10 @@ public class Scoreboard extends JPanel {
         else System.out.println("Player must be 0 or 1");
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getHighestScore() {
         return Math.max(Integer.valueOf( score1.getText() ), Integer.valueOf( score2.getText() ) );
     }

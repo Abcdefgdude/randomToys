@@ -118,6 +118,10 @@ public class Pong {
 
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean winCheck() {
         return sb.getHighestScore() >= WIN_SCORE;
     }

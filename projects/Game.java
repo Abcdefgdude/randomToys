@@ -18,6 +18,10 @@ public class Game extends JPanel {
 
     }
     
+    
+    /** 
+     * @param obj
+     */
     public void add(GameObject obj) {
         objects.add(0, obj);
     }
@@ -31,6 +35,10 @@ public class Game extends JPanel {
         repaint();
     }
     
+    
+    /** 
+     * @param g
+     */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -55,6 +63,10 @@ public class Game extends JPanel {
         }
     }
     
+    
+    /** 
+     * @param player
+     */
     public void score(int player) {
         sb.updateScore(player, 1);
         objects.removeIf(n -> n instanceof Ball);
@@ -62,6 +74,10 @@ public class Game extends JPanel {
         System.out.println("this : " + this);
     }
     
+    
+    /** 
+     * @return String
+     */
     public String toString() {
         String out = "";
         out += objects;

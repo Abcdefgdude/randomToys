@@ -1,4 +1,4 @@
-package projects;
+package brickbreaker;
 
 import java.awt.*;
 
@@ -32,18 +32,22 @@ public class GameObject {
      * @param move(
      * @return boolean
      */
-    public boolean isAbove(GameObject obj) { return - y > obj.y; }
+    public boolean isAbove(GameObject obj) { return y < obj.y; }
 
     
     /** 
-     * 
-     * 
+     * @param move(
+     * @return boolean
      */
-    public boolean isBelow(GameObject obj) { 
-        System.out.println("y : " + y);
-        System.out.println("obj.y - obj.getHeight() : " + (obj.y - obj.getHeight()));
-        return y > (obj.y - obj.getHeight()); } 
+    public boolean isBelow(GameObject obj) { return y >= obj.y + obj.getHeight(); } 
     
+    
+    /** 
+     * @param move(
+     * @return boolean
+     */
+    public boolean isMoving() { return velocityX != 0 || velocityY != 0; }
+
     
     /** 
      * @param move(
@@ -77,6 +81,12 @@ public class GameObject {
      * @return Color
      */
     public Color getColor() { return color; }
+
+    
+    /** 
+     * @param move(
+     */
+    public void setColor(Color c) { color = c; }
 
     
     /** 

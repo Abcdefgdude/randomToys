@@ -26,6 +26,10 @@ public class Ball extends GameObject {
         clip.start();
     }
     
+    
+    /** 
+     * @param obj
+     */
     public void collision(GameObject obj) {   
         playSound();
         if (isAbove(obj) || isBelow(obj)) 

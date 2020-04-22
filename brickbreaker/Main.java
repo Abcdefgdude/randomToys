@@ -1,4 +1,6 @@
-package projects;
+package brickbreaker;
+
+import java.util.regex.Pattern;
 
 public class Main {
     
@@ -6,6 +8,6 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
-        Pong game = new Pong();
+        BrickBreaker bb = new BrickBreaker();
     }
 }
