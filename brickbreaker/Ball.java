@@ -57,8 +57,8 @@ public class Ball extends GameObject {
      * @return Rectangle
      */
     public Rectangle getCollisionBox() { return new Rectangle(x + velocityX , y - velocityY , getWidth(), getHeight()); }
-    /** 
-     * @param obj 
+    /** Handles all collision logic 
+     * @param obj The GameObject collided with
      */
     public void collision(GameObject obj) {   
         if (obj instanceof Brick) 
@@ -73,6 +73,10 @@ public class Ball extends GameObject {
         else if (isAbove(obj) || isBelow(obj)) 
             velocityY = -velocityY;
         else velocityX = -velocityX;
+        // stops you from continuously bouncing ball in place
+        if (velocityX == 0)
+            if (Math.random() > 0.5) 
+                velocityX += Math.random() > 0.5 ? -1 : 1; 
         setLocation(move());
     }
 }

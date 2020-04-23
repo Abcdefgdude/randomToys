@@ -12,7 +12,7 @@ public class Game extends JPanel {
     public static int GAME_WIDTH = 1280; 
     public static int GAME_HEIGHT = 720;
     
-    public final int GAP = 5;
+    public final int GAP = 7;
     
     public int ROW_WIDTH;
     public int ROW_COUNT;
@@ -112,6 +112,7 @@ public class Game extends JPanel {
         objects.add(ball);
         balls.add(ball);
     }
+
     /** Called periodically by master timer to tick game forward */
     public void moveStuff() {
         checkCollisions();
@@ -152,8 +153,6 @@ public class Game extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        // g.fillRect(0, bricks.get(0).y, GAME_WIDTH, bricks.get(bricks.size()-1).y - bricks.get(0).y + bricks.get(bricks.size()-1).getHeight());
-        Rectangle rect = new Rectangle();
         for (Brick b : bricks) {
             g.setColor(b.getColor());
             g.fillRect(b.x, b.y, b.getWidth(), b.getHeight());
